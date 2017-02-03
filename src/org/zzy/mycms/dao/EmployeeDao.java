@@ -1,10 +1,10 @@
 
 package org.zzy.mycms.dao;
 
-import org.zzy.mycms.domain.Account;
+import org.zzy.mycms.domain.Employee;
 
 
-public interface AccountDao {
+public interface EmployeeDao {
 
 	/**
 	 * 读取用户信息
@@ -12,6 +12,6 @@ public interface AccountDao {
 	 * @param username
 	 * @return
 	 */
-	Account read(String username);
+	Employee read(String username);
 
 }

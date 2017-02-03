@@ -3,14 +3,14 @@ package org.zzy.mycms.domain;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Employee implements Serializable {
 	private static final long serialVersionUID = -533698031946372178L;
 
 	private String username;
 	private String password;
 
 	
-	public Account(String username, String password) {
+	public Employee(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}

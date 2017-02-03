@@ -2,11 +2,11 @@
 package org.zzy.mycms.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import org.zzy.mycms.dao.AccountDao;
-import org.zzy.mycms.domain.Account;
+import org.zzy.mycms.dao.EmployeeDao;
+import org.zzy.mycms.domain.Employee;
 
 @Repository
-public class AccountDaoImpl implements AccountDao {
+public class EmployeeDaoImpl implements EmployeeDao {
 
 	/*
 	 * (non-Javadoc)
@@ -14,9 +14,9 @@ public class AccountDaoImpl implements AccountDao {
 	 * @see org.zlex.spring.dao.AccountDao#read(java.lang.String)
 	 */
 	@Override
-	public Account read(String username) {
+	public Employee read(String username) {
 
-		return new Account(username, "wolf");
+		return new Employee(username, "wolf");
 	}
 
 }

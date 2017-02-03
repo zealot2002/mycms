@@ -10,13 +10,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.zzy.mycms.service.AccountService;
+import org.zzy.mycms.service.EmployeeService;
 
 @Controller
-public class AccountController {
+public class EmployeeController {
 
 	@Autowired
-	private AccountService accountService;
+	private EmployeeService employeeService;
 //	@SuppressWarnings("unchecked")
 //	@RequestMapping(value = "/account.do",method = RequestMethod.GET)
 //	public Map register(@RequestParam("username") String u,
@@ -41,7 +41,7 @@ public class AccountController {
 	public String login(String username, String password, PrintWriter writer) {  
 		System.out.println("login");
 		try {
-			writer.print(username+" login "+accountService.verify(username, password));
+			writer.print(username+" login "+employeeService.verify(username, password));
 			writer.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
