@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>bbcms</groupId>
-  <artifactId>bbcms</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>org.zzy</groupId>
+  <artifactId>mycms</artifactId>
+  <version>0.0.2</version>
   <packaging>war</packaging>
   
   <!-- 设定主仓库，按设定顺序进行查找。 -->

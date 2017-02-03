@@ -7,7 +7,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:component-scan
-		base-package="org.zlex.spring.controller" />
+		base-package="org.zzy.mycms.controller" />
 	<bean
 		id="urlMapping"
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />

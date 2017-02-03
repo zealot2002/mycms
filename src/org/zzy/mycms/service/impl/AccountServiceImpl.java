@@ -1,11 +1,10 @@
-package org.zlex.spring.service.impl;
+package org.zzy.mycms.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Transactional;
-import org.zlex.spring.dao.AccountDao;
-import org.zlex.spring.domain.Account;
-import org.zlex.spring.service.AccountService;
+import org.zzy.mycms.dao.AccountDao;
+import org.zzy.mycms.domain.Account;
+import org.zzy.mycms.service.AccountService;
 @Service
 public class AccountServiceImpl implements AccountService {
 	@Autowired

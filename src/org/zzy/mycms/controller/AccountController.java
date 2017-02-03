@@ -1,5 +1,5 @@
 
-package org.zlex.spring.controller;
+package org.zzy.mycms.controller;
 
 import java.io.PrintWriter;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.zlex.spring.service.AccountService;
+import org.zzy.mycms.service.AccountService;
 
 @Controller
 public class AccountController {

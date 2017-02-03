@@ -1,7 +1,7 @@
 
-package org.zlex.spring.dao;
+package org.zzy.mycms.dao;
 
-import org.zlex.spring.domain.Account;
+import org.zzy.mycms.domain.Account;
 
 
 public interface AccountDao {

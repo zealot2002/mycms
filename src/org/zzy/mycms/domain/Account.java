@@ -1,5 +1,5 @@
 
-package org.zlex.spring.domain;
+package org.zzy.mycms.domain;
 
 import java.io.Serializable;
 
