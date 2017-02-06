@@ -2,11 +2,37 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.zzy</groupId>
   <artifactId>mycms</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.1</version>
+  <name>mycms</name>
   <packaging>war</packaging>
   
-  <!-- 设定主仓库，按设定顺序进行查找。 -->
-    <repositories>
+<!-- 项目属性 start-->
+	<properties>
+		<!-- main version setting -->
+		<spring.version>4.3.5.RELEASE</spring.version>
+		<mybatis.version>3.2.8</mybatis.version>
+		<mybatis-spring.version>1.2.2</mybatis-spring.version>
+		<!-- tools version setting -->
+		<!-- jdbc driver setting -->
+		<mysql.driver.version>5.1.30</mysql.driver.version>
+	</properties>
+<!-- 项目属性 end-->
+
+<!-- 设定主仓库  start(按设定顺序进行查找)-->
+	<repositories>
+		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址 -->
+		 <repository>
+			<id>nexus-repos</id>
+			<name>Team Nexus Repository</name>
+			<url>http://175.25.23.108/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		
 		<repository>
 			<id>aliyun-repos</id>
 			<name>Aliyun Repository</name>
@@ -14,17 +40,31 @@
 		</repository> 
 		
 	</repositories>
-	
-	<!-- 设定插件仓库 -->
+<!-- 设定主仓库 end-->
+<!-- 设定插件仓库 start-->
 	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus-repos</id>
+			<name>Team Nexus Repository</name>
+			<url>http://175.25.23.108/nexus/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		
 		<pluginRepository>
 			<id>aliyun-repos</id>
 			<name>Aliyun Repository</name>
 			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
-                </pluginRepository>
-	</pluginRepositories>
+        </pluginRepository>
+		
+	</pluginRepositories> 
+<!-- 设定插件仓库 end-->
 	
-	<!-- 转换成Maven项目自动生成 -->
+<!-- 转换成Maven项目自动生成 start-->
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -45,27 +85,84 @@
       </plugin>
     </plugins>
   </build>
-  <!-- 转换成Maven项目自动生成 -->
-  
-  <properties>  
-    <org.springframework.version>4.3.5.RELEASE</org.springframework.version>  
-  </properties>
+<!-- 转换成Maven项目自动生成 end-->
 	
-  <!-- 依赖框架 -->
+<!-- 依赖框架 start-->
   <dependencies>
 	  <!-- spring core -->
  	<dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
-        <version>${org.springframework.version}</version> 
+        <version>${spring.version}</version> 
     </dependency>
     <!-- spring mvc -->
     <dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
-	    <version>${org.springframework.version}</version>
+	    <version>${spring.version}</version>
 	</dependency>
-    
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+
+<!-- spring orm -->
+<!-- jdbc driver -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.driver.version}</version>
+		<scope>runtime</scope>
+	</dependency>
+	 <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>4.0.8.RELEASE</version>
+	</dependency>
+	<!-- SPRING JDBC -->  
+     <dependency>  
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-jdbc</artifactId>  
+        <version>4.0.8.RELEASE</version>  
+    </dependency>  
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+    <!-- MyBatis -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>${mybatis.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>${mybatis-spring.version}</version>
+	</dependency>
+		
+		
+	
+		
     <!-- jsp -->
     <dependency>
 	    <groupId>javax.servlet</groupId>
@@ -73,5 +170,19 @@
 	    <version>1.2</version>
 	</dependency>
 
+
+	<!-- dbcp -->
+		 <dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency> 
+
    </dependencies>
+  
 </project>

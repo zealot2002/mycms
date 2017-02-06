@@ -10,13 +10,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.zzy.mycms.service.EmployeeService;
+import org.zzy.mycms.service.IEmployeeService;
 
 @Controller
 public class EmployeeController {
 
 	@Autowired
-	private EmployeeService employeeService;
+	private IEmployeeService employeeService;
 //	@SuppressWarnings("unchecked")
 //	@RequestMapping(value = "/account.do",method = RequestMethod.GET)
 //	public Map register(@RequestParam("username") String u,

@@ -1,4 +1,4 @@
 package org.zzy.mycms.service;
-public interface EmployeeService {
+public interface IEmployeeService {
 	boolean verify(String username, String password);
 }
