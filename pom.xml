@@ -167,7 +167,6 @@
 	    <version>1.2</version>
 	</dependency>
 
-
 	<!-- dbcp -->
 		 <dependency>
 			<groupId>commons-dbcp</groupId>
@@ -179,6 +178,15 @@
 			<artifactId>commons-pool</artifactId>
 			<version>1.6</version>
 		</dependency> 
+		
+	<!-- UI -->
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<!-- Latest 2.3.x (not 2.4.x), at least 2.3.16 -->
+		<version>[2.3.16,2.4)</version>
+	</dependency>
+		
 
    </dependencies>
   

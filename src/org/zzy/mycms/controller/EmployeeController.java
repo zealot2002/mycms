@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.zzy.mycms.service.IEmployeeService;
 
 @Controller
@@ -48,5 +49,15 @@ public class EmployeeController {
 			e.printStackTrace();
 		}
 	    return "";  
+	}
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView home() {
+		System.out.println("Welcome home!");
+		ModelAndView mav = new ModelAndView("home");
+        mav.addObject("name", "zzy");
+        mav.addObject("user", "zzy");
+        mav.addObject("title", "我是标题title");
+        
+        return mav;
 	}
 }
