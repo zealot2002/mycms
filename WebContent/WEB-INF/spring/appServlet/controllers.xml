@@ -13,4 +13,11 @@
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				 <bean class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean> 
 </beans>

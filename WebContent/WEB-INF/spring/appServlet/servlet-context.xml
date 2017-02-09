@@ -15,7 +15,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<beans:bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-	  <beans:property name="templateLoaderPath" value="/freemarker/"/>
+	  <beans:property name="templateLoaderPath" value="/WEB-INF/content/"/>
 	  <!-- <beans:property name="templateLoaderPaths">
 		<beans:list>
 		<beans:value>/WEB-INF/freemarker/</beans:value>
@@ -30,7 +30,8 @@
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 	  <beans:property name="cache" value="true"/>
 	  <beans:property name="prefix" value=""/>
-	  <beans:property name="suffix" value=".ftl"/>
+	  <beans:property name="suffix" value=".html"/>
+	  <beans:property name="contentType" value="text/html; charset=utf-8"/>
 	</beans:bean>
 
 	<!-- 

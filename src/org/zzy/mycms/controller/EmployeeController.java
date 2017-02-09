@@ -1,15 +1,17 @@
 
 package org.zzy.mycms.controller;
 
+
+//no use
 import java.io.PrintWriter;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.zzy.mycms.service.IEmployeeService;
 
@@ -38,7 +40,7 @@ public class EmployeeController {
 //	} 
 //	
 	@SuppressWarnings("unchecked")  
-	@RequestMapping(value = "/login",method = RequestMethod.GET)  
+	@RequestMapping(value = "/employee/login",method = RequestMethod.GET)  
 	public String login(String username, String password, PrintWriter writer) {  
 		System.out.println("login");
 		try {
@@ -50,7 +52,7 @@ public class EmployeeController {
 		}
 	    return "";  
 	}
-	@RequestMapping(value="/home", method=RequestMethod.GET)
+	@RequestMapping(value="wwwww", method=RequestMethod.GET)
 	public ModelAndView home() {
 		System.out.println("Welcome home!");
 		ModelAndView mav = new ModelAndView("home");
@@ -60,4 +62,20 @@ public class EmployeeController {
         
         return mav;
 	}
+	@RequestMapping(value = "xxx", method=RequestMethod.POST)  
+    public @ResponseBody   String check(    
+            @RequestParam(value = "username", required = true) String username,   
+                    @RequestParam(value = "password", required = true) String password,   
+                            Model model) {    
+		System.out.println("Welcome check!");
+        //   
+        boolean isExist = employeeService.verify(username, password);  
+        String info = new String();  
+        if(isExist){  
+            info = "yes";  
+        }else{  
+            info = "no";  
+        }  
+        return info;    
+    } 
 }

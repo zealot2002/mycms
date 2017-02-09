@@ -4,7 +4,10 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 
     <context-param> <!--全局范围内环境参数初始化-->  
 		<param-name>contextConfigLocation</param-name>          <!--参数名称-->  
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>     <!--参数取值-->  
+		<param-value>
+			/WEB-INF/spring/root-context.xml
+			/WEB-INF/spring/spring-cms-interceptors.xml
+		</param-value>     <!--参数取值-->  
 	</context-param>  
 
 <!--以下配置的加载顺序:先 ServletContext >> context-param >> listener >> filter >> servlet >>  spring --> 
@@ -47,7 +50,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
     
 
