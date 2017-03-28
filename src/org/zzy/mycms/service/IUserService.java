@@ -1,4 +1,9 @@
 package org.zzy.mycms.service;
-public interface IEmployeeService {
-	boolean verify(String username, String password);
+
+import org.zzy.mycms.bean.User;
+
+public interface IUserService {
+	User findUserByName(String userName);
+
+	boolean updateLoginTime(int id);
 }

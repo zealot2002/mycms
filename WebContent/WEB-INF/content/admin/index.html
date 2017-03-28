@@ -13,10 +13,8 @@
      window.UEDITOR_HOME_URL = "${url}/public/ueditor/";
      window.BASE_URL = '${url}';
     </script>
-   	
 </head>
 
-alert("entry index");
 <body>
 
 <!-- 头部 高55px -->
@@ -24,9 +22,20 @@ alert("entry index");
     <div id="logo" class="fl layout_style_logo">
     	<a href="${url!}/admin/index.do"><img src="images/logo.png" /></a>
     </div>
-    
-
-
+    <div id="admin_nav" class="fl layout_style_nav">
+        <ul class="font_shadow">
+        	<#list topmenus as menu>
+        		<li class="transition_background" url="childmenus.do?id=${menu.id?c}" index="${menu.url!}">${menu.name!}</li>
+        	</#list>
+        </ul>
+    </div>
+    <div id="admin_info" class="fr layout_info">
+    	当前用户: ${loginusername!} &nbsp;[<a href="logout.do">注销</a>] &nbsp;<a href="${url}" target="_blank">[网站首页]</a>
+        <br/>
+             <div id="index_time">loading...</div>
+             
+   	    
+    </div>
     <div id="admin_face" class="pa" onclick="addStyle('css/themes/flat.css')"></div>
 </div>
 

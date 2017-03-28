@@ -11,7 +11,6 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
     <!--1 自动扫描 将标注Spring注解的类自动转化Bean-->  
   	<context:component-scan base-package="org.zzy.mycms" />  
-
   
     <!--2 加载数据资源属性文件 --> 
     <bean id="propertyConfigurer"  
@@ -36,26 +35,28 @@
         <!-- 获取连接最大等待时间 -->  
         <property name="maxWait" value="${maxWait}"></property>  
     </bean>  
-  
-    <!-- 3   配置sessionfactory -->  
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
-        <property name="dataSource" ref="dataSource" />  
-        <!-- 自动扫描mapping.xml文件 -->  
-        <property name="mapperLocations" value="classpath:org/zzy/mycms/mapping/*.xml"></property>  
-    </bean>  
-  
-    <!-- 5  装配dao接口 -->  
+
+  	<!--3 JDBC模板操作对象 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 	
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="org.zzy.mycms.dao" />  <!-- DAO接口所在包名，Spring会自动查找其下的类 --> 
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
-    </bean>  
+	<!--4 使用annotation定义事务 -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	
+    <!-- 5  装配dao接口 -->  
+    <context:component-scan base-package="org.zzy.mycms.dao.impl" />
   
     <!-- 6、声明式事务管理 -->  
 	<bean id="transactionManager"  
 	  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
 	  <property name="dataSource" ref="dataSource" />  
 	</bean>  
-	<!-- 7、注解事务切面 -->
+	
+	<!-- 通过springContextHolder可以获取applicationContext中的数据信息 --> 
+    <bean id="webRealPathHolder" class="org.zzy.mycms.holder.WebRealPathHolder" />
+
+	<!-- 核心类加载器 -->
+ 	<context:component-scan base-package="org.zzy.mycms.service"/>
 		
 </beans>  

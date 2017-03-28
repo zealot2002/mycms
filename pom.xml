@@ -10,8 +10,6 @@
 	<properties>
 		<!-- main version setting -->
 		<spring.version>4.3.5.RELEASE</spring.version>
-		<mybatis.version>3.2.8</mybatis.version>
-		<mybatis-spring.version>1.2.2</mybatis-spring.version>
 		<!-- tools version setting -->
 		<!-- jdbc driver setting -->
 		<mysql.driver.version>5.1.30</mysql.driver.version>
@@ -152,18 +150,6 @@
 			</exclusion>
 		</exclusions>
 	</dependency>
-	
-    <!-- MyBatis -->
-	<dependency>
-		<groupId>org.mybatis</groupId>
-		<artifactId>mybatis</artifactId>
-		<version>${mybatis.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.mybatis</groupId>
-		<artifactId>mybatis-spring</artifactId>
-		<version>${mybatis-spring.version}</version>
-	</dependency>
 		
     <!-- jsp -->
     <dependency>
@@ -192,6 +178,29 @@
 		<version>[2.3.16,2.4)</version>
 	</dependency>
 		
+	<dependency>  
+	    <groupId>org.slf4j</groupId>  
+	    <artifactId>slf4j-log4j12</artifactId>  
+	    <version>1.7.2</version>  
+	</dependency>
+	
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.14</version>
+    </dependency>
+    
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.4</version>
+	</dependency>
 
    </dependencies>
   

@@ -1,4 +1,4 @@
-package org.zzy.mycms.model;
+package org.zzy.mycms.bean;
 
 public class Employee {
     private Integer id;

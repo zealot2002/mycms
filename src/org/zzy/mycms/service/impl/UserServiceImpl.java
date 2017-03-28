@@ -1,22 +1,24 @@
 package org.zzy.mycms.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.zzy.mycms.dao.IEmployeeDao;
-import org.zzy.mycms.model.Employee;
-import org.zzy.mycms.service.IEmployeeService;
+import org.zzy.mycms.bean.User;
+import org.zzy.mycms.dao.IUserDao;
+import org.zzy.mycms.service.IUserService;
 @Service
-public class EmployeeServiceImpl implements IEmployeeService {
+public class UserServiceImpl implements IUserService {
 	@Autowired
-	private IEmployeeDao employeeDao;
+	private IUserDao userDao;
+
 	@Override
-	public boolean verify(String username, String password) {
-		Employee employee = employeeDao.selectByPrimaryKey(2);
-		if (password.equals(employee.getPassword())) {
-			return true;
-		} else {
-			return false;
-		}
+	public User findUserByName(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.findUserByName(userName);
+	}
+
+	@Override
+	public boolean updateLoginTime(int id) {
+		// TODO Auto-generated method stub
+		return userDao.updateLoginTime(id);
 	}
 }

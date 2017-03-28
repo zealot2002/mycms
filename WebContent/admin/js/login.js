@@ -56,7 +56,6 @@ function submitLogin(){
 		dataType:"json",
 		data: params,
 		success: function(json){
-			alert("success");
 			if(json.status == true){
 				location.href = "index.do";
 			}else{
