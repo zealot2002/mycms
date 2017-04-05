@@ -57,6 +57,7 @@
     <bean id="webRealPathHolder" class="org.zzy.mycms.holder.WebRealPathHolder" />
 
 	<!-- 核心类加载器 -->
+ 	<context:component-scan base-package="org.zzy.mycms.holder"/>
  	<context:component-scan base-package="org.zzy.mycms.service"/>
 		
 </beans>  

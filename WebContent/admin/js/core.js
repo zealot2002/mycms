@@ -56,7 +56,7 @@ function addContent(obj){
 	// 视图切换回调，资源回收操作
 	if(window.view_callback) window.view_callback(); 
 	
-	
+	alert("addContent  2"+$(obj).attr('url'));
 	var nav_two = $(obj).parent().parent().parent().children().first().html();
 	var nav_one = $(obj).html();
 	
